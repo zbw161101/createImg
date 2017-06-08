@@ -1,0 +1,16 @@
+{
+  "apps":[{
+    "name" : "createImg",
+    "script": "./bin/www",
+    "cwd": "../",
+    "max_memory_restart": "300M",
+    "instances": 1,
+    "watch": false,
+    "error_file" : "./usingHelp/logs/app-err.log",
+    "out_file"   : "./usingHelp/logs/app-out.log",
+    "env": {
+      "NODE_ENV": "production",
+      "PORT": "3003"
+    }
+  }]
+}
