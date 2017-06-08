@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "pm2 start ./config/start.json",
-    "test": "node ./bin/www"
+    "dev": "node ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.15.2",
