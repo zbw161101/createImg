@@ -12,9 +12,15 @@ router.get('/:size/:bgColor/:fontColor', function (req, res) {
   };
 
   const imgName = path.join(__dirname, '../i/' + req.url.split('/').join('m') + '.jpg');
-  handleImg(conf, imgName, function () {
-    res.sendFile(imgName);
-  });
+  // 直接请求图片
+  // 如果无图片生成图片,再次发送
+  res.sendFile(imgName, (err) => {
+    if (err) {
+      handleImg(conf, imgName, function () {
+        res.sendFile(imgName);
+      });
+    }
+  })
 });
 
 module.exports = router;
