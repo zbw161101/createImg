@@ -3,7 +3,7 @@ const router = express.Router();
 const handleImg = require('../lib/handleImg');
 const path = require('path');
 /* GET home page. */
-router.get('/:size/:bgColor/:fontColor', function (req, res, next) {
+router.get('/:size/:bgColor/:fontColor', function (req, res) {
 
   let conf = {
     size: req.params.size,
